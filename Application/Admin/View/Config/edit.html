@@ -1,0 +1,46 @@
+<extend name="Public/base"/>
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+		<a href="{:U('lists')}" class="fr top_rt_btn money_icon">配置管理</a>
+	</div>
+	<form action="__SELF__" method="post" id="editForm" class="form-horizontal">
+		<input type="hidden" name="id" value="{$info['id']}">
+		<ul class="ulColumn2">
+			<li>
+				<span class="item_name">配置标示：</span>
+				<input type="text" class="textbox textbox_225" name="name" value="{$info['name']}" />
+			</li>
+			<li>
+				<span class="item_name">配置标题：</span>
+				<input type="text" class="textbox textbox_225" name="title" value="{$info['title']}" />
+			</li>
+			<li>
+				<span class="item_name">排序：</span>
+				<input type="text" class="textbox textbox_225" name="sort" value="{$info['sort']}" />
+			</li>
+			<li>
+				<span class="item_name">配置类型：</span>
+				<select name="type" class="select">
+					<volist name="config_type" id="v">
+						<option value="{$key}" <eq name="key" value="$info['type']">selected</eq>>{$v}</option>
+					</volist>
+				</select>
+			</li>
+			<li>
+				<span class="item_name">配置值：</span>
+				<textarea name="value" class="textarea textbox_295">{$info['value']}</textarea>
+			</li>
+			<li>
+				<span class="item_name">说明：</span>
+				<input type="text" class="textbox textbox_225" name="remark" value="{$info['remark']}" />
+			</li>
+			<li>
+				<span class="item_name"></span>
+				<input type="submit" class="link_btn" />
+			</li>
+		</ul>
+	</form>
+</div>
+</block>

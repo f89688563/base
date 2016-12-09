@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$sys_title}</title>
+<meta name="author" content="DeathGhost" />
+<link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+<!--[if lt IE 9]>
+<script src="__STATIC__js/html5.js"></script>
+<![endif]-->
+<script src="__STATIC__/js/jquery.js"></script>
+<script src="__STATIC__/js/layer/layer.js"></script>
+<script src="__JS__/base.js"></script>
+</head>
+<block name="js"></block>
+<block name="style"></block>
+<body>
+	<!--header-->
+	<header>
+		<h1>
+			<img src="__IMG__/admin_logo.png" />
+		</h1>
+		<ul class="rt_nav">
+			<li><a href="http://www.deathghost.cn" target="_blank" class="website_icon">站点首页</a></li>
+			<li><a href="javascript:;" class="clear_icon ajax-confirm" data-url="{:U('Config/clear')}" data-title="确定清除？">清除缓存</a></li>
+			<li><a href="{:U('Member/update')}" class="set_icon">账号设置</a></li>
+			<li><a href="{:U('Public/logout')}" class="quit_icon">安全退出</a></li>
+		</ul>
+	</header>
+	<!--aside nav-->
+	<aside class="lt_aside_nav content mCustomScrollbar">
+		<h2>
+			<a href="{:U('Index/index')}">首页</a>
+		</h2>
+		<ul class="menu">
+			<volist name="menu" id="v">
+				<li>
+					<dl>
+						<dt>{$v['title']}</dt>
+						<volist name="v['sub']" id="sub">
+							<dd>
+								<a href="{:U($sub['url'])}" <if condition="$url eq $sub['name']">class='active'</if>>{$sub['title']}</a>
+							</dd>
+						</volist>
+					</dl>
+				</li>
+			</volist>
+		</ul>
+	</aside>
+
+	<section class="rt_wrap content mCustomScrollbar">
+		<block name="content"></block>
+	</section>
+	<script type="text/javascript">
+		$(function() {
+			// 设置左边选项卡样式
+			// 1.先隐藏所有子选项卡
+			$('.menu dd').each(function() {
+				$(this).addClass('hidden')
+			})
+			// 2.父选项卡设置点击事件
+			$('.menu dt').on('click', function() {
+				// 隐藏其他子选项卡
+				$(this).parents('li').siblings().find('dd').addClass('hidden')
+				// 显示自己的子选项卡
+				$(this).siblings().toggleClass('hidden')
+			})
+			// 3.显示激活的选项卡的兄弟
+			$('.menu .active').parent().removeClass('hidden').siblings().removeClass('hidden')
+			
+			// 搜索
+	       	$("#btn_search").on('click',function(){
+	       		var url = '{$action_name}';
+	       		$(".search").each(function(){
+	       			if ($(this).val()){
+	       				url += '/' + $(this).attr('name') + '/' + $(this).val();
+	       			}
+	       		});
+	       		location.href = '{:U("'+url+'")}';
+	       	});
+		})
+	</script>
+</body>
+</html>

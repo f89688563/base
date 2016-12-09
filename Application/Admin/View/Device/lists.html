@@ -1,0 +1,54 @@
+<extend name="Public/base" />
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+		<a href="{:U('auth')}" class="fr top_rt_btn add_icon">添加授权</a>
+	</div>
+	<section class="mtb">
+		<input type="text" name="id" value="{$id}" class="textbox textbox_365 search" placeholder="请输入id" />
+		<input type="button" id="btn_search" value="查询" class="group_btn" />
+	</section>
+	<table class="table">
+        <tr>
+	        	<th style="width:310px;">
+	        		<label><input type="checkbox" name="ids" class="check_all">全选</label>
+	        	</th>
+            <th>产品id</th>
+            <th>mac</th>
+            <th style="width:170px;">二维码</th>
+            <th>auth_key</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        <notempty name="list">
+        		<volist name="list" id="v">
+	          	<tr>
+	          	  	<td>
+		          	  	<label>
+			          	  	<input type="checkbox" name="ids" class="checkboxs" value="{$v['id']}">
+			          	  	<a href="{:U('edit?id='.$v['id'])}">{$v['id']}</a>
+		          	  	</label>
+	          	  	</td>
+					<td>{$v['product_id']}</td>
+					<td>{$v['mac']}</td>
+					<td>
+						<img src="__QRUPLOAD__/{$v['qrcode']}" class="img-middle" />
+					</td>
+					<td>{$v['auth_key']|default="-"}</td>
+					<td>{$bind_status[$v['status']]}</td>
+					<td>
+						<a href="javascript:;" class="ajax-confirm" data-url="{:U('del?id='.$v['id'])}" data-title="确定删除？">删除</a>
+					</td>
+	          	</tr>
+          	</volist>
+		</notempty>
+    </table>
+    <aside class="paging">
+	  	<aside class="operation">
+			<input data-url="{:U('del')}" type="button" class="group_btn btn_multi" value="批量删除">
+		</aside>
+ 	  {$_page|default=''}
+  	</aside>
+</div>
+</block>

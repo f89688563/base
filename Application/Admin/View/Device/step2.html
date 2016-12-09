@@ -1,0 +1,102 @@
+<form action="{:U('auth')}" method="post" class="form" id="editForm">
+	<input type="hidden" name="edit" value="{$info['id']}" />
+	<input type="hidden" name="product_id" id="proid" readonly value="{$info['product_id']}" />
+	<ul class="ulColumn2">
+		<li>
+			<span class="item_name">设备id：</span>
+			<input type="text" class="textbox textbox_365" id="id" name="id" value="{$info['id']}" readonly />
+		</li>
+		<li>
+			<span class="item_name">二维码：</span>
+			<input type="hidden" name="qrcode" id="qrcode" value="{$info['qrcode']}" readonly />
+			<img class="img-middle" id="img_code" src="__QRUPLOAD__/{$info['qrcode']}" />
+		</li>
+		<li>
+			<span class="item_name">mac：</span>
+			<input type="text" class="textbox textbox_365" name="mac" value="{$info['mac']}" />
+			<span class="errorTips">格式采用16进制串的方式 如：1234567890AB</span>
+		</li>
+		<li>
+			<span class="item_name">连接协议：</span>
+			<label class="single_selection">
+				<input type="checkbox" class="textbox" name="connect_protocol[]" value="1" <if condition="strpos(','.$info['connect_protocol'], '1') gt 0">checked</if> /> android classic bluetooth
+			</label>
+			<label class="single_selection">
+				<input type="checkbox" class="textbox" name="connect_protocol[]" value="2" <if condition="strpos(','.$info['connect_protocol'], '2') gt 0">checked</if> /> ios classic bluetooth
+			</label>
+			<label class="single_selection">
+				<input type="checkbox" class="textbox" name="connect_protocol[]" value="3" <if condition="strpos(','.$info['connect_protocol'], '3') gt 0">checked</if> /> ble
+			</label>
+			<label class="single_selection">
+				<input type="checkbox" class="textbox" name="connect_protocol[]" value="4" <if condition="strpos(','.$info['connect_protocol'], '4') gt 0">checked</if> /> wifi
+			</label>
+		</li>
+		<li>
+			<span class="item_name">auth及通信的加密key：</span>
+			<input type="text" class="textbox textbox_365" name="auth_key" value="{$info['auth_key']}" />
+			<span class="errorTips">auth及通信的加密key，第三方需要将key烧制在设备上（128bit）</span>
+		</li>
+		<li>
+			<span class="item_name">断开策略：</span>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="close_strategy" value="1" <eq name="info['close_strategy']" value="1">checked</eq> /> 退出公众号断开
+			</label>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="close_strategy" value="2" <eq name="info['close_strategy']" value="2">checked</eq> /> 退出公众号不断开
+			</label>
+		</li>
+		<li>
+			<span class="item_name">连接策略：</span>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="conn_strategy" value="1" <eq name="info['conn_strategy']" value="1">checked</eq> /> 公众号页面连接
+			</label>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="conn_strategy" value="4" <eq name="info['conn_strategy']" value="4">checked</eq> /> 非公众号页面连接
+			</label>
+		</li>
+		<li>
+			<span class="item_name">auth加密方法：</span>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="crypt_method" value="0" <eq name="info['crypt_method']" value="0">checked</eq> /> 不加密
+			</label>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="crypt_method" value="1" <eq name="info['crypt_method']" value="1">checked</eq> /> AES加密
+			</label>
+		</li>
+		<li>
+			<span class="item_name">auth version：</span>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="auth_ver" value="0" <eq name="info['auth_ver']" value="0">checked</eq> /> 不加密的version
+			</label>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="auth_ver" value="1" <eq name="info['auth_ver']" value="1">checked</eq> /> version 1
+			</label>
+		</li>
+		<li>
+			<span class="item_name">mac地址在厂商广播的偏移：</span>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="manu_mac_pos" value="-1" <eq name="info['manu_mac_pos']" value="-1">checked</eq> /> 在尾部
+			</label>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="manu_mac_pos" value="-2" <eq name="info['manu_mac_pos']" value="-2">checked</eq> /> 不包含mac地址
+			</label>
+		</li>
+		<li>
+			<span class="item_name">mac地址在厂商的偏移：</span>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="ser_mac_pos" value="-1" <eq name="info['ser_mac_pos']" value="-1">checked</eq> /> 在尾部
+			</label>
+			<label class="single_selection">
+				<input type="radio" class="textbox" name="ser_mac_pos" value="-2" <eq name="info['ser_mac_pos']" value="-2">checked</eq> /> 不包含mac地址
+			</label>
+		</li>
+		<!-- <li>
+			<span class="item_name">精简协议类型：</span>
+			<input type="text" class="textbox textbox_365" name="ble_simple_protocol" />
+		</li> -->
+		<li>
+			<span class="item_name"></span>
+			<input type="submit" class="link_btn" />
+		</li>
+	</ul>
+</form>

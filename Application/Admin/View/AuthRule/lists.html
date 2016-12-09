@@ -1,0 +1,66 @@
+<extend name="Public/base"/>
+<block name="style">
+<style>
+</style>
+</block>
+<block name="content">
+<!--右侧内容开始-->
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+		<a href="{:U('edit')}" class="fr top_rt_btn add_icon">添加菜单</a>
+	</div>
+	<section class="mtb">
+		<input type="text" name="title" value="{$title}" class="textbox textbox_225 search" placeholder="请输入标题" />
+		<input type="button" id="btn_search" value="查询" class="group_btn" />
+	</section>
+    <table class="table">
+        <tr>
+        	<th><label><input type="checkbox" name="ids" class="check_all">全选</label></th>
+            <th>模型</th>
+            <th>标题</th>
+            <th>排序</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+         <notempty name="list">
+          <volist name="list" id="v">
+	          <tr>
+	          	  <td>
+	          	  	<label>
+		          	  	<input type="checkbox" name="ids" class="checkboxs" value="{$v['id']}">{$v['id']}
+	          	  	</label>
+	          	  </td>
+	              <td>{$v['module']}</td>
+	              <td><a href="{:U('edit?id='.$v['id'])}">{$v['title']}</a></td>
+	              <td>{$v['order']}</td>
+	              <td>
+	              	<if condition="$v['status'] eq 1">
+	              		启用
+	              	<else />
+	              		禁用
+	              	</if>
+	              </td>
+	              <td>
+	              	<if condition="$v['status'] eq 1">
+		              	<a href="javascript:;" class="ajax-confirm" data-url="{:U('status?id='.$v['id'].'&s=0')}" data-title="确定禁用？">禁用</a>
+	              	<else />
+		              	<a href="javascript:;" class="ajax-confirm" data-url="{:U('status?id='.$v['id'].'&s=1')}" data-title="确定启用？">启用</a>
+	              	</if>
+	              	<a href="javascript:;" class="ajax-confirm" data-url="{:U('del?id='.$v['id'])}" data-title="确定删除？">删除</a>
+	              </td>
+	          </tr>
+          </volist>
+         </notempty>
+    </table>
+    <aside class="paging">
+	  	<aside class="operation">
+			<input data-url="{:U('del')}" type="button" class="group_btn btn_multi" value="批量删除">
+			<input data-url="{:U('status?s=1')}" type="button" class="group_btn btn_multi" value="批量启用">
+		    <input data-url="{:U('status?s=0')}" type="button" class="group_btn btn_multi" value="批量禁用">
+		</aside>
+ 	  {$_page|default=''}
+  	</aside>
+</div>
+<!--右侧内容结束-->
+</block>

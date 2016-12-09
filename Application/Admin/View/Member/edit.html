@@ -1,0 +1,42 @@
+<extend name="Public/base"/>
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+		<a href="{:U('lists')}" class="fr top_rt_btn money_icon">用户管理</a>
+	</div>
+	<form action="__SELF__" method="post" id="editForm" class="form-horizontal">
+		<input type="hidden" name="uid" value="{$info['uid']}">
+		<ul class="ulColumn2">
+			<li>
+				<span class="item_name">用户名：</span>
+				<input type="text" class="textbox textbox_225" name="username" value="{$info['username']}" />
+			</li>
+			<li>
+				<span class="item_name">密码：</span>
+				<input type="password" class="textbox textbox_225" name="password" value="{$info['password']}" maxlength="16" />
+			</li>
+			<li>
+				<span class="item_name">所属组：</span>
+				<select name="group" class="select">
+					<volist name="group" id="v">
+						<option value="{$key}" <eq name="info['group']" value="$key">selected</eq>>{$v}</option>
+					</volist>
+				</select>
+			</li>
+			<li>
+				<span class="item_name">状态：</span>
+				<volist name="status" id="v">
+					<label class="single_selection">
+						<input type="radio" name="status" value="{$key}" <if condition="$info['status'] eq $key">checked</if>>{$v}
+					</label>
+				</volist>
+			</li>
+			<li>
+				<span class="item_name"></span>
+				<input type="submit" class="link_btn" />
+			</li>
+		</ul>
+	</form>
+</div>
+</block>
