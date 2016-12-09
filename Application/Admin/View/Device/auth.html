@@ -1,0 +1,43 @@
+<extend name="Public/base" />
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+	</div>
+	<section class="step-body">
+		<div class="step step1">
+			<include file="step1" />
+		</div>
+		<div class="step step2 hidden">
+			<include file="step2" />
+		</div>
+	</section>
+</div>
+</block>
+<block name="js">
+<script>
+
+$(function(){
+	$('.btn_auth').on('click', function(){
+		var id = $('#product_id').val(),
+			url = '{:U("qrcode")}'
+		$.post(url, {id:id}, function(json){
+			if (json.status == 1) {
+				
+				$('.step').each(function(){
+					$(this).toggleClass('hidden')
+				})
+				
+				$('#id').val(json.device_id)
+				$('#proid').val(id)
+				$('#qrcode').val(json.qrcode)
+				$('#img_code').attr('src', '__QRUPLOAD__/'+json.qrcode)
+				
+			} else {
+				tips(json.msg, json.status, false)
+			}
+		}, 'json')
+	})
+})
+</script>
+</block>

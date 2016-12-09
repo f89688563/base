@@ -1,0 +1,76 @@
+<extend name="Public/base"/>
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">编辑权限</h2>
+		<a href="{:U('lists')}" class="fr top_rt_btn money_icon">用户组</a>
+	</div>
+	<form action="__SELF__" method="post" id="editForm"
+		class="form-horizontal">
+		<input type="hidden" name="id" value="{$info['id']}">
+		<ul class="ulColumn2">
+			<li>
+				<span class="item_name">权限菜单：</span>
+				{:get_menu_list('checkbox')}
+			</li>
+			<li>
+				<span class="item_name"></span>
+				<input type="submit" class="link_btn" value="更新/保存" />
+			</li>
+		</ul>
+	</form>
+</div>
+</block>
+<block name="js"> <script>
+	$(function() {
+		$(".lbl[data-pid=0]").each(function() {
+			$(this).wrap('<div class="left-200 lbl_id_' + $(this).data('id') + '" />');
+			rank($(this).data('id'));
+		});
+
+		// 复选框设置选中事件
+		$(".ckb").on('click', function() {
+			// 设置子选项状态
+			var id = $(this).parent().data('id');
+			$(".lbl[data-pid=" + id + "]").parent().find("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+		});
+		$(".ckb").on('change', function() {
+			// 设置父选项状态
+			var pid = $(this).parent().data('pid');
+			if ($(this).prop("checked") && $(".lbl[data-id=" + pid + "]").find("input[type=checkbox]").prop('checked') == false) {
+				$(".lbl[data-id=" + pid + "]").find("input[type=checkbox]").prop('checked', true);
+				$(".lbl[data-id=" + pid + "]").find("input[type=checkbox]").trigger('change');
+			}
+		});
+
+		// 设置已选中
+		var ids = "{$info['rules']}";
+		var arrIds = ids.split(',');
+		for ( var i = 0; i < arrIds.length; i++) {
+			$("input[type=checkbox][value=" + arrIds[i] + "]").prop("checked", true);
+		}
+	});
+
+	/**
+	 * 组合选项框
+	 */
+	function rank(id) {
+
+		// 子选项添加div包裹
+		$(".lbl[data-pid=" + id + "]").wrapAll(
+				"<div class='left-30 lbl_pid_"+id+"' />");
+		// 子选项移动至父选项
+		$(".lbl_id_" + id).append($(".lbl_pid_" + id));
+
+		// 递归
+		$(".lbl[data-pid=" + id + "]").each(function() {
+			var subid = $(this).data('id');
+			if ($(".lbl[data-pid=" + subid + "]").length > 0) {
+				$(this).wrap('<div class="lbl_id_'+subid+'" />');
+				rank(subid);
+			}
+		});
+
+	}
+</script>
+</block>

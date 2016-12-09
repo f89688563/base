@@ -1,0 +1,76 @@
+<extend name="Public/base"/>
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+		<a href="{:U('lists')}" class="fr top_rt_btn money_icon">菜单管理</a>
+	</div>
+	<form action="__SELF__" method="post" id="editForm" class="form-horizontal">
+	<input type="hidden" name="id" value="{$info['id']}">
+	<ul class="ulColumn2">
+		<li>
+			<span class="item_name">标题：</span>
+			<input type="text" class="textbox textbox_225" name="title" value="{$info['title']}" placeholder="请输入标题" />
+		</li>
+		<li>
+			<span class="item_name">模型：</span>
+			<input type="text" class="textbox textbox_225" name="module" value="{$info['module']}" placeholder="请输入模型，eg：Admin" />
+		</li>
+		<li>
+			<span class="item_name">url：</span>
+			<input type="text" class="textbox textbox_225" name="url" value="{$info['url']}" placeholder="请输入url，eg：Index/index" />
+		</li>
+		<li>
+			<span class="item_name">名称：</span>
+			<input type="text" class="textbox textbox_225" name="name" value="{$info['name']}" placeholder="请输入name，eg：Index/index" />
+		</li>
+		<li>
+			<span class="item_name">上级菜单：</span>
+			<select id="pid" name="pid" class="select">
+				<option value="0" >顶级菜单</option>
+				{:get_menu_list()}
+			</select>
+		</li>
+		<li>
+			<span class="item_name">排序：</span>
+			<input type="text" class="textbox textbox_225" name="order" value="{$info['order']}" placeholder="请输入排序，大->小" />
+		</li>
+		<li>
+			<span class="item_name">是否在主菜单：</span>
+			<label class="single_selection">
+				<input type="radio" name="type" value="0" <if condition="$info['type'] eq 0">checked</if>>否
+			</label>
+			<label class="single_selection">
+				<input type="radio" name="type" value="1" <if condition="$info['type'] eq 1">checked</if>>是
+			</label>
+		</li>
+		<li>
+			<span class="item_name">状态：</span>
+			<label class="single_selection">
+				<input type="radio" name="status" value="0" <if condition="$info['status'] eq 0">checked</if>>禁用
+			</label>
+			<label class="single_selection">
+				<input type="radio" name="status" value="1" <if condition="$info['status'] eq 1">checked</if>>启用
+			</label>
+		</li>
+		<li>
+			<span class="item_name"></span>
+			<input type="submit" class="link_btn" />
+		</li>
+	</ul>
+	</form>
+</div>
+</block>
+<block name="js">
+<script>
+$(function(){
+	// 编辑时设置选中
+	var pid = "{$info['pid']}";
+	$("#pid option").each(function(){
+		if (pid == $(this).val()){
+			$(this).attr('selected',true);
+		}
+	});
+})
+</script>
+</block>

@@ -1,0 +1,30 @@
+<extend name="Public/base" />
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+	</div>
+	<section>
+		<form action="{:U('Public/update')}" method="post" class="form" id="editForm">
+			<ul class="ulColumn2">
+				<li>
+					<span class="item_name">原密码：</span>
+					<input type="password" class="textbox textbox_225" name="old" autocomplete="off" />
+				</li>
+				<li>
+					<span class="item_name">新密码：</span>
+					<input type="password" class="textbox textbox_225" name="password" autocomplete="off" />
+				</li>
+				<li>
+					<span class="item_name">确认密码：</span>
+					<input type="password" class="textbox textbox_225" name="repassword" autocomplete="off" />
+				</li>
+				<li>
+					<span class="item_name"></span>
+					<input type="submit" class="link_btn" />
+				</li>
+			</ul>
+		</form>
+	</section>
+</div>
+</block>

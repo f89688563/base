@@ -1,0 +1,82 @@
+<extend name="Public/base" />
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+	</div>
+	<section>
+		<form action="__SELF__" method="post" class="form" id="editForm">
+			<ul class="ulColumn2">
+				<volist name="list" id="v" key="k">
+					<li>
+						<span class="item_name">菜单{$k}：</span>
+						<input type="text" class="textbox textbox_225" name="button[{$k}][name]" value="{$v['name']}" />
+					</li>
+					<li>
+						<span class="item_name">菜单类型：</span>
+						<select class="select menu_type" name="button[{$k}][type]">
+							<volist name="btn_type" id="val">
+								<option value="{$key}" <eq name="key" value="$v['type']">selected</eq> >{$val}</option>
+							</volist>
+						</select>
+					</li>
+					<if condition="$v['type']">
+						<li>
+							<span class="item_name">值：</span>
+							<if condition="view eq $v['type']">
+								<input type="text" class="textbox textbox_435" name="button[{$k}][url]" value="{$v['url']}" />
+							<elseif condition="media_id eq $v['type']"/>
+								<input type="text" class="textbox textbox_225" name="button[{$k}][media_id]" value="{$v['media_id']}" />
+							<else/>
+								<input type="text" class="textbox textbox_435" name="button[{$k}][key]" value="{$v['key']}" />
+							</if>
+						</li>
+					</if>
+						<ul class="ulColumn2 left-60">
+							<volist name="v['sub_button']" id="sub" key="k2">
+								<li>
+									<span class="item_name">子菜单{$key}：</span>
+									<input type="text" class="textbox textbox_225" name="button[{$k}][sub_button][{$k2}][name]" value="{$sub['name']}" />
+								</li>
+								<li>
+									<span class="item_name">菜单类型：</span>
+									<select class="select menu_type" name="button[{$k}][sub_button][{$k2}][type]">
+										<volist name="btn_type" id="val">
+											<option value="{$key}" <eq name="key" value="$sub['type']">selected</eq> >{$val}</option>
+										</volist>
+									</select>
+								</li>
+								<li>
+									<span class="item_name">值：</span>
+									<if condition="view eq $v['type']">
+										<input type="text" class="textbox textbox_225" name="button[{$k}][sub_button][{$k2}][url]" value="{$sub['url']}" />
+									<elseif condition="media_id eq $v['type']"/>
+										<input type="text" class="textbox textbox_225" name="button[{$k}][sub_button][{$k2}][media_id]" value="{$sub['media_id']}" />
+									<else/>
+										<input type="text" class="textbox textbox_225" name="button[{$k}][sub_button][{$k2}][key]" value="{$sub['key']}" />
+									</if>
+								</li>
+							</volist>
+						</ul>
+				</volist>
+				<li>
+					<span class="item_name"></span>
+					<input type="submit" class="link_btn" />
+				</li>
+			</ul>
+		</form>
+	</section>
+</div>
+</block>
+<block name="js">
+<script>
+	$(function(){
+		$('.menu_type').on('change', function(){
+			var $li = $(this).closest('li').next()
+			var val = $(this).val()
+			var type = '{$btn_type}';
+			console.log(type)
+		})
+	})
+</script>
+</block>

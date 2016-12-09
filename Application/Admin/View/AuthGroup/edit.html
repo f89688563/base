@@ -1,0 +1,49 @@
+<extend name="Public/base"/>
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+		<a href="{:U('lists')}" class="fr top_rt_btn money_icon">用户组</a>
+	</div>
+	<form action="__SELF__" method="post" id="editForm"
+		class="form-horizontal">
+		<input type="hidden" name="id" value="{$info['id']}">
+		<ul class="ulColumn2">
+			<li>
+				<span class="item_name">标题：</span>
+				<input type="text" class="textbox textbox_225" name="title" value="{$info['title']}" placeholder="请输入标题" />
+			</li>
+			<li>
+				<span class="item_name">模型：</span>
+				<input type="text" class="textbox textbox_225" name="module" value="{$info['module']}" placeholder="请输入模型eg: Admin" />
+			</li>
+			<li>
+				<span class="item_name">状态：</span>
+				<label class="single_selection">
+					<input type="radio" name="status" value="0" <if condition="$info['status'] eq 0">checked</if>>禁用
+				</label> 
+				<label class="single_selection">
+					<input type="radio" name="status" value="1" <if condition="$info['status'] eq 1">checked</if>>启用
+				</label>
+			</li>
+			<li>
+				<span class="item_name"></span>
+				<input type="submit" class="link_btn" />
+			</li>
+		</ul>
+	</form>
+</div>
+</block>
+<block name="js">
+<script>
+	$(function() {
+		// 编辑时设置选中
+		var id = "{$info['id']}";
+		$("#pid option").each(function() {
+			if (id == $(this).val()) {
+				$(this).attr('selected', true);
+			}
+		});
+	})
+</script>
+</block>

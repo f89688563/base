@@ -1,0 +1,28 @@
+<extend name="Public/base" />
+<block name="content">
+<div class="rt_content">
+	<div class="page_title">
+		<h2 class="fl">{$meta_title}</h2>
+	</div>
+	<section>
+		<form action="__SELF__" method="post" class="form" id="editForm">
+			<ul class="ulColumn2">
+				<volist name="list" id="v">
+					<li>
+						<span class="item_name">{$v['title']}：</span>
+						<if condition="1 eq $v['type']">
+							<input type="text" class="textbox textbox_225" name="name[{$v['name']}]" value="{$v['value']}" />
+						<else/>
+							<textarea class="textarea textbox_295" name="name[{$v['name']}]">{$v['value']}</textarea>
+						</if>
+					</li>
+				</volist>
+				<li>
+					<span class="item_name"></span>
+					<input type="submit" class="link_btn" />
+				</li>
+			</ul>
+		</form>
+	</section>
+</div>
+</block>
