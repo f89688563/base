@@ -10,13 +10,14 @@ namespace Common\Logic;
 
 class WechatCallback
 {
+    var $msgObj;
+    
 	// 验证签名
-	public function valid() {
+	public function valid($token) {
 		$echoStr = $_GET ["echostr"];
 		$signature = $_GET ["signature"];
 		$timestamp = $_GET ["timestamp"];
 		$nonce = $_GET ["nonce"];
-		$token = C('WX_TOKEN');
 		$tmpArr = array (
 			$token,
 			$timestamp,
@@ -31,6 +32,10 @@ class WechatCallback
 		}
 	}
 	
+	public function __construct($config=null) {
+	    $this->msgObj = new MessageLogic($config);
+	}
+	
 	// 响应消息
 	public function responseMsg() {
 // 		$postStr = $GLOBALS ["HTTP_RAW_POST_DATA"];
@@ -40,7 +45,8 @@ class WechatCallback
 			$postObj = simplexml_load_string ( $postStr, 'SimpleXMLElement', LIBXML_NOCDATA );
 			$RX_TYPE = trim ( $postObj->MsgType );
 
-			$msgObj = new MessageLogic();
+			$config = '';
+			$msgObj = $this->msgObj;
 			if ($msgObj->isInservice((string)$postObj->FromUserName))
 			{
 				$msgObj->msg_2_qy($postObj);
@@ -99,6 +105,13 @@ class WechatCallback
 				$content = '已取消绑定';
 				break;
 			case 'device_text':
+			    $content = '设备信息';
+				break;
+			case 'subscribe_status':
+			    $content = '绑定状态2';
+				break;
+			case 'unsubscribe_status':
+			    $content = '绑定状态0';
 				break;
 		}
 		
@@ -430,7 +443,7 @@ $item_str
 	// 回复多客服消息
 	private function transmitService($object) {
 		// 消息发送到企业客服
-		$msgObj = new MessageLogic();
+		$msgObj = $this->msgObj;
 		$msgObj->msg_2_qy($object);
 		
 		$result = $this->transmitText($object, '正在为您转接客服，请稍后...');

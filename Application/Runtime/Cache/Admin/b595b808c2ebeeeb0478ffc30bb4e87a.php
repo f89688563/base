@@ -46,52 +46,6 @@
 
 	<section class="rt_wrap content mCustomScrollbar">
 		
-<div class="rt_content">
-	<div class="page_title">
-		<h2 class="fl"><?php echo ($meta_title); ?></h2>
-		<a href="<?php echo U('auth');?>" class="fr top_rt_btn add_icon">添加授权</a>
-	</div>
-	<section class="mtb">
-		<input type="text" name="id" value="<?php echo ($id); ?>" class="textbox textbox_365 search" placeholder="请输入id" />
-		<input type="button" id="btn_search" value="查询" class="group_btn" />
-	</section>
-	<table class="table">
-        <tr>
-	        	<th style="width:310px;">
-	        		<label><input type="checkbox" name="ids" class="check_all">全选</label>
-	        	</th>
-            <th>产品id</th>
-            <th>mac</th>
-            <th style="width:170px;">二维码</th>
-            <th>状态</th>
-            <th>操作</th>
-        </tr>
-        <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><tr>
-	          	  	<td>
-		          	  	<label>
-			          	  	<input type="checkbox" name="ids" class="checkboxs" value="<?php echo ($v['id']); ?>">
-			          	  	<a href="<?php echo U('edit?id='.$v['id']);?>"><?php echo ($v['id']); ?></a>
-		          	  	</label>
-	          	  	</td>
-					<td><?php echo ($v['product_id']); ?></td>
-					<td><?php echo ($v['mac']); ?></td>
-					<td>
-						<img src="/base/Upload/Qr/<?php echo ($v['qrcode']); ?>" class="img-middle" />
-					</td>
-					<td><?php echo ($bind_status[$v['status']]); ?></td>
-					<td>
-						<a href="javascript:;" class="ajax-confirm" data-url="<?php echo U('del?id='.$v['id']);?>" data-title="确定删除？">删除</a>
-					</td>
-	          	</tr><?php endforeach; endif; else: echo "" ;endif; endif; ?>
-    </table>
-    <aside class="paging">
-	  	<aside class="operation">
-			<input data-url="<?php echo U('del');?>" type="button" class="group_btn btn_multi" value="批量删除">
-		</aside>
- 	  <?php echo ((isset($_page) && ($_page !== ""))?($_page):''); ?>
-  	</aside>
-</div>
-
 	</section>
 	<script type="text/javascript">
 		$(function() {

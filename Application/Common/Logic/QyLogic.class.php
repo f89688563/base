@@ -18,10 +18,13 @@ class QyLogic extends BaseLogic
 		$this->appid = $corpid ? $corpid : 'wx1c40df09d2c90926';
 		$this->appsecret = $corpsecret ? $corpsecret : '9coiKMwz8nbnM21CQPtaD3YVVxeOdeyto_9_e1bGO8IzwCZ9nrQPHUSDqEuAaWkF';
 		
-		$this->token_name = 'qydsit2016';
+		$this->token_name = 'qydsit2016'.$this->appid;
 		$this->token_url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid={appid}&corpsecret={appsecret}';
 
 		$this->access_token = $this->getAccessToken();
+		if ( 'error' == $this->access_token) {
+		    $this->access_token = $this->getAccessToken(1);
+		}
 	}
 	
 	public function send_msg()
@@ -100,7 +103,7 @@ class QyLogic extends BaseLogic
 	{
 		$url = "https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token=".$this->access_token."&type=".$type;
 		// 解决php5.5以上传图片
-		$data = array("media" => curl_file_create($filename));
+		$data = array("media" => $this->curlFileCreate($filename));
 		$res = $this->https_request($url, $data);
 		return json_decode($res, true);
 	}

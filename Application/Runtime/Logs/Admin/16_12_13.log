@@ -1,0 +1,354 @@
+[ 2016-12-13T15:56:38+08:00 ] ::1 /base/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `sys_member` [ RunTime:0.0015s ]
+SQL: SELECT `group` FROM `sys_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sys_auth_group` [ RunTime:0.0016s ]
+SQL: SELECT `rules` FROM `sys_auth_group` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sys_auth_rule` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `sys_auth_rule` WHERE `status` = 1 AND `id` IN ('1','5','21','23','15','20','16','18','19','32','33','37','38','36','39','41','42','40','43','44','45') ORDER BY `order` desc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007059s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007110s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000490s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000525s ]
+
+[ 2016-12-13T15:58:54+08:00 ] ::1 /base/admin.php/Device/auth.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+NOTIC: [2] Declaration of Admin\Controller\DeviceController::lists() should be compatible with Admin\Controller\BaseController::lists($model = NULL, $p = 0, $extend = Array, $return = 0) /Applications/MAMP/htdocs/base/Application/Admin/Controller/DeviceController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 97 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 98 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 102 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 106 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 107 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 111 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 117 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 120 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 123 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 126 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 131 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 137 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 140 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 146 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 149 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 155 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 158 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 164 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 167 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 173 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 176 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 182 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011894s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011937s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000598s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+
+[ 2016-12-13T15:59:07+08:00 ] ::1 /base/admin.php/Device/qrcode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+NOTIC: [2] Declaration of Admin\Controller\DeviceController::lists() should be compatible with Admin\Controller\BaseController::lists($model = NULL, $p = 0, $extend = Array, $return = 0) /Applications/MAMP/htdocs/base/Application/Admin/Controller/DeviceController.class.php 第 11 行.
+NOTIC: [2] mkdir(): File exists /Applications/MAMP/htdocs/base/Application/Common/Common/extend.php 第 17 行.
+
+[ 2016-12-13T16:00:15+08:00 ] ::1 /base/admin.php/Device/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+NOTIC: [2] Declaration of Admin\Controller\DeviceController::lists() should be compatible with Admin\Controller\BaseController::lists($model = NULL, $p = 0, $extend = Array, $return = 0) /Applications/MAMP/htdocs/base/Application/Admin/Controller/DeviceController.class.php 第 11 行.
+SQL: SHOW COLUMNS FROM `sys_device` [ RunTime:0.0018s ]
+NOTIC: [8] Undefined index: fields /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 305 行.
+NOTIC: [8] Undefined index: eq /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 324 行.
+SQL: SELECT `id`,`product_id`,`qrcode`,`mac`,`connect_protocol`,`auth_key`,`close_strategy`,`conn_strategy`,`crypt_method`,`auth_ver`,`manu_mac_pos`,`ser_mac_pos`,`create_time`,`update_time`,`status`,`openid`,`bind_time` FROM `sys_device` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sys_device` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined variable: id /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/67aed621a2760375d192d549d42203be.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010320s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010369s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000154s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000611s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000688s ]
+
+[ 2016-12-13T16:00:47+08:00 ] ::1 /base/admin.php/Wx/user.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `sys_subscribe` [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: fields /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 305 行.
+NOTIC: [8] Undefined index: eq /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 324 行.
+SQL: SELECT `id`,`openid`,`create_time`,`status` FROM `sys_subscribe` WHERE `status` = 1 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sys_subscribe` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Undefined variable: openid /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/a0a341c84233413454b93e58106eed09.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010375s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2016-12-13T16:00:51+08:00 ] ::1 /base/admin.php/Device/auth.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000387s ]
+NOTIC: [2] Declaration of Admin\Controller\DeviceController::lists() should be compatible with Admin\Controller\BaseController::lists($model = NULL, $p = 0, $extend = Array, $return = 0) /Applications/MAMP/htdocs/base/Application/Admin/Controller/DeviceController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 97 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 98 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 102 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 106 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 107 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 111 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 117 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 120 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 123 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 126 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 131 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 137 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 140 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 146 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 149 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 155 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 158 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 164 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 167 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 173 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 176 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 182 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000989s ]
+
+[ 2016-12-13T16:00:52+08:00 ] ::1 /base/admin.php/Device/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+NOTIC: [2] Declaration of Admin\Controller\DeviceController::lists() should be compatible with Admin\Controller\BaseController::lists($model = NULL, $p = 0, $extend = Array, $return = 0) /Applications/MAMP/htdocs/base/Application/Admin/Controller/DeviceController.class.php 第 11 行.
+SQL: SHOW COLUMNS FROM `sys_device` [ RunTime:0.0025s ]
+NOTIC: [8] Undefined index: fields /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 305 行.
+NOTIC: [8] Undefined index: eq /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 324 行.
+SQL: SELECT `id`,`product_id`,`qrcode`,`mac`,`connect_protocol`,`auth_key`,`close_strategy`,`conn_strategy`,`crypt_method`,`auth_ver`,`manu_mac_pos`,`ser_mac_pos`,`create_time`,`update_time`,`status`,`openid`,`bind_time` FROM `sys_device` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sys_device` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: id /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/67aed621a2760375d192d549d42203be.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007885s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000592s ]
+
+[ 2016-12-13T16:02:58+08:00 ] ::1 /base/admin.php/Wx/user.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+SQL: SHOW COLUMNS FROM `sys_subscribe` [ RunTime:0.0025s ]
+NOTIC: [8] Undefined index: fields /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 305 行.
+NOTIC: [8] Undefined index: eq /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 324 行.
+SQL: SELECT `id`,`openid`,`create_time`,`status` FROM `sys_subscribe` WHERE `status` = 1 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sys_subscribe` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8] Undefined variable: openid /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/a0a341c84233413454b93e58106eed09.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009612s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2016-12-13T16:03:13+08:00 ] ::1 /base/admin.php/Device/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000891s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+NOTIC: [2] Declaration of Admin\Controller\DeviceController::lists() should be compatible with Admin\Controller\BaseController::lists($model = NULL, $p = 0, $extend = Array, $return = 0) /Applications/MAMP/htdocs/base/Application/Admin/Controller/DeviceController.class.php 第 11 行.
+SQL: SHOW COLUMNS FROM `sys_device` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined index: fields /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 305 行.
+NOTIC: [8] Undefined index: eq /Applications/MAMP/htdocs/base/Application/Admin/Controller/BaseController.class.php 第 324 行.
+SQL: SELECT `id`,`product_id`,`qrcode`,`mac`,`connect_protocol`,`auth_key`,`close_strategy`,`conn_strategy`,`crypt_method`,`auth_ver`,`manu_mac_pos`,`ser_mac_pos`,`create_time`,`update_time`,`status`,`openid`,`bind_time` FROM `sys_device` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sys_device` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8] Undefined variable: id /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/67aed621a2760375d192d549d42203be.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008650s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2016-12-13T16:06:02+08:00 ] ::1 /base/admin.php/Device/auth.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [2] Declaration of Admin\Controller\DeviceController::lists() should be compatible with Admin\Controller\BaseController::lists($model = NULL, $p = 0, $extend = Array, $return = 0) /Applications/MAMP/htdocs/base/Application/Admin/Controller/DeviceController.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 97 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 98 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 102 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 106 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 107 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 111 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 117 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 120 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 123 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 126 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 131 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 137 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 140 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 146 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 149 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 155 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 158 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 164 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 167 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 173 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 176 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 182 行.
+NOTIC: [8] Undefined variable: info /Applications/MAMP/htdocs/base/Application/Runtime/Cache/Admin/26e9f1a4944b08ed07cce74227033fb1.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010876s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001073s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001162s ]
+
+[ 2016-12-13T20:15:54+08:00 ] ::1 /base/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+ERR: SQLSTATE[HY000] [2002] Connection refused
+
+[ 2016-12-13T20:15:54+08:00 ] ::1 /base/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+ERR: SQLSTATE[HY000] [2002] Connection refused
+
+[ 2016-12-13T20:15:57+08:00 ] ::1 /base/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+ERR: SQLSTATE[HY000] [2002] Connection refused
+
+[ 2016-12-13T20:16:35+08:00 ] ::1 /base/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000293s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001915s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `sys_member` [ RunTime:0.0036s ]
+SQL: SELECT `group` FROM `sys_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sys_auth_group` [ RunTime:0.0020s ]
+SQL: SELECT `rules` FROM `sys_auth_group` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sys_auth_rule` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `sys_auth_rule` WHERE `status` = 1 AND `id` IN ('1','5','21','23','15','20','16','18','19','32','33','37','38','36','39','41','42','40','43','44','45') ORDER BY `order` desc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000664s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000737s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+

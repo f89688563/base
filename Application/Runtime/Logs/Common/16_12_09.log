@@ -1,0 +1,24 @@
+[ 2016-12-09T23:04:22+08:00 ] ::1 /base/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+ERR: 无法加载模块:Index
+
+[ 2016-12-09T23:04:22+08:00 ] ::1 /base/index.php/Index/index.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+ERR: 无法加载模块:Index
+
+[ 2016-12-09T23:05:11+08:00 ] ::1 /base/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+ERR: 无法加载模块:Index
+
+[ 2016-12-09T23:05:12+08:00 ] ::1 /base/index.php/Index/index.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001225s ]
+ERR: 无法加载模块:Index
+
