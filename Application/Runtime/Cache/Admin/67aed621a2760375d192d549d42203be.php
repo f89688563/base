@@ -63,7 +63,6 @@
             <th>产品id</th>
             <th>mac</th>
             <th style="width:170px;">二维码</th>
-            <th>auth_key</th>
             <th>状态</th>
             <th>操作</th>
         </tr>
@@ -79,7 +78,6 @@
 					<td>
 						<img src="/base/Upload/Qr/<?php echo ($v['qrcode']); ?>" class="img-middle" />
 					</td>
-					<td><?php echo ((isset($v['auth_key']) && ($v['auth_key'] !== ""))?($v['auth_key']):"-"); ?></td>
 					<td><?php echo ($bind_status[$v['status']]); ?></td>
 					<td>
 						<a href="javascript:;" class="ajax-confirm" data-url="<?php echo U('del?id='.$v['id']);?>" data-title="确定删除？">删除</a>

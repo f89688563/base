@@ -16,10 +16,13 @@ class WxLogic extends BaseLogic
 		$this->appid = $appid ? $appid : 'wx39046badac30d1b2' ;
 		$this->appsecret = $appsecret ? $appsecret : '798f0079a711a152844b1974478987df';
 		
-		$this->token_name = 'fw_access_token_'.$appid;
+		$this->token_name = 'fw_access_token_'.$this->appid;
 		$this->token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={appid}&secret={appsecret}';
 
 		$this->access_token = $this->getAccessToken();
+		if ( 'error' == $this->access_token) {
+		    $this->access_token = $this->getAccessToken(1);
+		}
 	}
 	
 	// 开启会话
@@ -204,7 +207,7 @@ class WxLogic extends BaseLogic
 	public function uploadMedia($filename, $type)
 	{
 		// 解决php5.5以上传图片
-		$data = array("media"  => $this->curlFileCreate($filename));
+		$data = array('media' => $this->curlFileCreate($filename));
 		$url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=".$this->access_token."&type=".$type;
 		$res = $this->https_request($url, $data);
 		return json_decode($res, true);

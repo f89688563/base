@@ -24,13 +24,9 @@ class BaseLogic
 		}
 		if ( empty( $data ) ){
 			$data = $this->saveAccessToken();
-		} else {
-			if ( $data['expires'] < time() ){
-				$this->saveAccessToken();
-			}
 		}
 	
-		return $data['access_token'];
+		return $data;
 	}
 	
 	public function saveAccessToken(){
@@ -38,16 +34,12 @@ class BaseLogic
 		$url = str_replace(['{appid}','{appsecret}'], [$this->appid,$this->appsecret], $this->token_url);
 		$res = $this->https_request($url);
 		$result = json_decode($res, true);
-	
 		if ($result['access_token']){
 	
-			$data = array(
-				'access_token' => $result['access_token'],
-				'expires' => time() + $result['expires_in'],
-			);
+			$data = $result['access_token'];
 			S( $tokenname, $data, array( 'expire' => $result['expires_in'] ) );
 		} else {
-			die('获取异常');
+		    $data = 'error';
 		}
 		return $data;
 	}

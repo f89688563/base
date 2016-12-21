@@ -43,7 +43,8 @@ class QyController extends BaseApiController
 		
 		if ($errCode == 0) {
 			// 处理消息
-			$msgLogic = new MessageLogic();
+			$config = '';
+			$msgLogic = new MessageLogic($config);
 			$msgLogic->msg_2_cus($sMsg);
 		} else {
 			print("ERR: " . $errCode . "\n\n");

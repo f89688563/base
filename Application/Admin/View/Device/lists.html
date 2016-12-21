@@ -17,7 +17,6 @@
             <th>产品id</th>
             <th>mac</th>
             <th style="width:170px;">二维码</th>
-            <th>auth_key</th>
             <th>状态</th>
             <th>操作</th>
         </tr>
@@ -35,7 +34,6 @@
 					<td>
 						<img src="__QRUPLOAD__/{$v['qrcode']}" class="img-middle" />
 					</td>
-					<td>{$v['auth_key']|default="-"}</td>
 					<td>{$bind_status[$v['status']]}</td>
 					<td>
 						<a href="javascript:;" class="ajax-confirm" data-url="{:U('del?id='.$v['id'])}" data-title="确定删除？">删除</a>

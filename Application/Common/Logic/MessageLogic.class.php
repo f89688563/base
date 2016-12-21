@@ -10,10 +10,12 @@ namespace Common\Logic;
 use Think\Log;
 class MessageLogic
 {
-	
-	public function __construct()
+	var $wxLogic;
+	var $qyLogic;
+	public function __construct($config=null)
 	{
-		
+		$this->wxLogic = new WxLogic($config['wx_app_id'], $config['wx_secret_key']);
+		$this->qyLogic = new QyLogic($config['qy_app_id'], $config['qy_secret_key']);
 	}
 	
 	/**
@@ -25,8 +27,7 @@ class MessageLogic
 	public function msg_2_qy($object)
 	{
 		$msg = json_decode(json_encode($object), true);
-		$qyLogic = new QyLogic();
-		$qyLogic->msg_2_kf('', $msg);
+		$this->qyLogic->msg_2_kf('', $msg);
 		
 		$this->saveMsg($msg, 'pf');
 	}
@@ -43,7 +44,6 @@ class MessageLogic
 			$res['Item'] = array($res['Item']);
 		}
 		
-		$wxLogic = new WxLogic();
 		foreach ($res['Item'] as $v)
 		{
 			$kf = $v['FromUserName'];
@@ -54,7 +54,7 @@ class MessageLogic
 			switch ($agentType)
 			{
 				case 'kf_external':
-					$r = $wxLogic->send_custom_message($v);
+					$r = $this->wxLogic->send_custom_message($v);
 					Log::write($r);
 					file_put_contents('log.txt', $r."\r\n", FILE_APPEND);
 					break;

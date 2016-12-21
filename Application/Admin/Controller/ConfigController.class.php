@@ -6,7 +6,6 @@
  * charset : UTF-8
  */
 namespace Admin\Controller;
-use Think\Log;
 
 class ConfigController extends BaseController {
 	

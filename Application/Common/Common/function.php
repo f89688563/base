@@ -32,11 +32,12 @@ function del_dir($dir){
  * time : 2016-9-9上午9:45:35
  */
 function getTree($data, $pid, $type=1){
-	$return = '';
+	$return = null;
 	foreach($data as $k => $v){
 		if($v['pid'] == $pid){         //父亲找到儿子
 			switch ($type){
 				case 1:
+				    unset($sub);
 					$sub = getTree($data, $v['id'], $type);
 					$sub and $v['sub'] = $sub;
 					$return[] = $v;
@@ -122,6 +123,35 @@ function log2file($content){
 	$filename = 'log_'.date('Y-m-d').'.txt';
 	$content = date('Y-m-d H:i:s').'--'.$content."\n";
 	file_put_contents($path.$filename, $content, FILE_APPEND);
+}
+
+/**
+ * 默认值
+ * @param unknown $data
+ * @param unknown $field
+ * @param string $default
+ * @param string $filter
+ * @return string|unknown
+ * @author liwang <89688563@qq.com>
+ * time : 2016年12月20日下午6:00:52
+ */
+function dv($data, $field, $default='', $filter='') {
+    $return = '';
+    if ($data && $field) {
+        $return = $data[$field];
+        switch ($filter) {
+            case 'string':
+                $return = (string)$return;
+                break;
+            case 'int':
+                $return = (int)$return;
+                break;
+            default:
+                break;
+        }
+        $return = $return ? $return : $default;
+    }
+    return $return;
 }
 
 /**

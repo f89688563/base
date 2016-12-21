@@ -8,6 +8,7 @@
 
 namespace Api\Controller;
 use Common\Logic\WechatCallback;
+use Common\Logic\WxLogic;
 
 class WxController extends BaseApiController{
     
@@ -16,13 +17,24 @@ class WxController extends BaseApiController{
 		parent::__construct();
 	}
 	
+	public function test() {
+	    $wxLogic = new WxLogic();
+	    
+	    $filename = 'ak.jpeg';
+	    $type = 'image';
+	    $res = $wxLogic->uploadMedia($filename, $type);
+	    dump($res);die;
+	}
+	
     public function index(){
         header('Content-type:text');
-        $wechatObj = new WechatCallback();
+        $config = '';
+        $wechatObj = new WechatCallback($config);
         if (!isset($_GET['echostr'])) {
             $wechatObj->responseMsg();
         }else{
-            $wechatObj->valid();
+            $token = 'gzhtoken';
+            $wechatObj->valid($token);
         }
     }
     
