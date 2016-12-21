@@ -103,7 +103,8 @@ class QyLogic extends BaseLogic
 	{
 		$url = "https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token=".$this->access_token."&type=".$type;
 		// 解决php5.5以上传图片
-		$data = array("media" => $this->curlFileCreate($filename));
+// 		$data = array("media" => $this->curlFileCreate($filename));
+		$data = array("media" => curl_file_create($filename));
 		$res = $this->https_request($url, $data);
 		return json_decode($res, true);
 	}

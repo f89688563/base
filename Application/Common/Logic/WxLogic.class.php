@@ -207,7 +207,8 @@ class WxLogic extends BaseLogic
 	public function uploadMedia($filename, $type)
 	{
 		// 解决php5.5以上传图片
-		$data = array('media' => $this->curlFileCreate($filename));
+// 		$data = array('media' => $this->curlFileCreate($filename));
+		$data = array("media" => curl_file_create($filename));
 		$url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=".$this->access_token."&type=".$type;
 		$res = $this->https_request($url, $data);
 		return json_decode($res, true);
